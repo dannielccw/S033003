@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     String data[] ={"apple", "lemon", "banana", "orange"};
+    String data2[] = {"蘋果", "檸檬","香蕉","橘子"};
     ListView lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
             View v = getLayoutInflater().inflate(R.layout.myitem, null);
 
             TextView tv = (TextView) v.findViewById(R.id.textView);
+            TextView tv2 = (TextView) v.findViewById(R.id.textView2);
             tv.setText(data[position]);
+            tv2.setText(data2[position]);
             return v;
         }
     }
