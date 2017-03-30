@@ -8,9 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
-    String data[] ={"apple", "lemon", "banana", "orange"};
-    String data2[] = {"蘋果", "檸檬","香蕉","橘子"};
+    ArrayList<String> data = new ArrayList<>();
+
     ListView lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +20,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lv = (ListView) findViewById(R.id.listView);
-        MyAdapter adapter = new MyAdapter(MainActivity.this, data, data2);
+        data.add("AA1");
+        data.add("AA2");
+        data.add("AA3");
+        data.add("AA4");
+        data.add("AA5");
+        data.add("AA6");
+        data.add("AA7");
+        data.add("AA8");
+        data.add("AA9");
+        data.add("AA10");
+        data.add("AA11");
+        data.add("AA12");
+        MyAdapter adapter = new MyAdapter(MainActivity.this, data);
+
         lv.setAdapter(adapter);
     }
 }

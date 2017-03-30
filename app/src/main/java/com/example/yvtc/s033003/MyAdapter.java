@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by YVTC on 2017/3/30.
  */
@@ -14,20 +16,18 @@ import android.widget.TextView;
 public class MyAdapter extends BaseAdapter {
 
     Context context;
-    String data[];
-    String data2[];
+    ArrayList<String> data;
 
-    public MyAdapter(Context c, String[] d, String d2[])
+    public MyAdapter(Context c, ArrayList<String> d)
     {
         context = c;
         data = d;
-        data2 = d2;
     }
 
 
     @Override
     public int getCount() {
-        return data.length;
+        return data.size();
     }
 
     @Override
@@ -45,9 +45,7 @@ public class MyAdapter extends BaseAdapter {
         View v = ((Activity) context).getLayoutInflater().inflate(R.layout.myitem, null);
 
         TextView tv = (TextView) v.findViewById(R.id.textView);
-        TextView tv2 = (TextView) v.findViewById(R.id.textView2);
-        tv.setText(data[position]);
-        tv2.setText(data2[position]);
+        tv.setText(data.get(position));
         return v;
     }
 }
