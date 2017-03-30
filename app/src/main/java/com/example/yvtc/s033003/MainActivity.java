@@ -39,9 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            TextView tv = new TextView(MainActivity.this);
+            View v = getLayoutInflater().inflate(R.layout.myitem, null);
+
+            TextView tv = (TextView) v.findViewById(R.id.textView);
             tv.setText(data[position]);
-            return tv;
+            return v;
         }
     }
 }
